@@ -1,0 +1,11 @@
+secret_number=9
+guess=0
+guess_limit=3
+while guess < guess_limit:
+    guess_user = int(input("Guess "))
+    guess=guess+1
+    if guess_user == secret_number:
+        print("You won ")
+        break
+    elif guess == guess_limit:
+        print("You lose")
