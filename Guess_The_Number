@@ -1,0 +1,17 @@
+import random 
+numbers =range(1,100)
+guess_number = random.choice(numbers)
+#print(guess_number)
+number_user=int(input())
+
+while number_user:
+    if guess_number > number_user:
+        print("Up")
+        number_user =int(input())
+    elif guess_number < number_user:
+        print("Down")
+        number_user=int(input())
+    else: 
+        print("YOU WIN")
+        number_user=False
+        break
