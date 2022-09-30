@@ -1,0 +1,46 @@
+import random 
+Start = input("Chose level, B for beginner, M for medium, H for hard ").upper()
+lives=0
+x=1
+while x:
+    if Start == "B":
+        print("You have 10 tries")
+        lives=10
+        break
+    elif Start == "M":
+        print("You have 6 tries")
+        lives=6
+        break
+    elif Start == "H":
+        print("You have 3 tries")
+        lives=3
+        break
+    else:
+        print("Wrong charactar ")
+        print(Start)
+    
+    Start=(input("Chose level, B for beginner, M for medium, H for hard ").upper())
+numbers =range(1,100)
+guess_number = random.choice(numbers)
+#print(guess_number)
+number_user=int(input())
+
+while number_user:
+    if guess_number > number_user and lives > 1:
+        print("Up")
+        number_user =int(input())
+        lives-= 1
+        
+    elif guess_number < number_user and lives > 1:
+        print("Down")
+        number_user=int(input())
+        lives -= 1
+    
+    elif lives == 1:
+        print("You lose")
+        break
+        
+    elif number_user == guess_number:
+        print("YOU WIN")
+        number_user=False
+        break
